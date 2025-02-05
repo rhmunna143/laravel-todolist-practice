@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('done_models', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('todo_id');
             $table->timestamps();
         });
     }

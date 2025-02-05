@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TodoModel;
 use Illuminate\Http\Request;
 
 class DoneController extends Controller
@@ -12,6 +13,14 @@ class DoneController extends Controller
     public function index()
     {
         //
+    }
+
+    // belongsTo relationship
+    public function storeOne(Request $request)
+    {
+        $todo = TodoModel::find(1);
+        $done = $todo->done;
+        return $done;
     }
 
     /**
